@@ -38,8 +38,26 @@ if __name__ == "__main__":
             print(f"Flipped list of animals: {animal_list[::-1]}")
             print(f"Symmetric?: {animal_palindrome(animal_list)}\n")
 
+        if choice == "2":
+            while True:
+                length_input = input("\nEnter length of random list: ")
+
+                try:
+                    length = int(length_input)
+                    if length > 0:
+                        break
+                    else:
+                        print("Please enter a positive number.")
+                except ValueError:
+                    print("Please enter a valid number.")
+            
+            random_list = random_animals(length)
+            print(f"Random list of animals: {random_list}")
+            print(f"Flipped list of animals: {random_list[::-1]}")
+            print(f"Symmetric?: {animal_palindrome(random_list)}\n")
+
         elif choice == "3":
             break
 
         else:
-            print("Please enter a valid option (1, 2, or 3).")
+            print("\nPlease enter a valid option (1, 2, or 3).")
